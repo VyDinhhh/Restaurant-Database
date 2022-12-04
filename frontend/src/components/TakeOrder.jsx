@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import { menu } from './menu';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 export default function TakeOrder() {
   const { tableID } = useParams();
   const [cart, setCart] = useState([]);
   const [employee, setEmployee] = useState("");
   const [isEnterID, setIsEnterID] = useState(false);
+  const orderID = Math.floor(Math.random()*100000000);
   //Handle events
   const addItem = (event, chosenDish) => {
     event.preventDefault();
-    if (employee === "" && isEnterID === true) {
+    if (isEnterID === false) {
       alert("Enter your employee ID first")
     } else {
       setCart([...cart, chosenDish])
@@ -20,7 +21,7 @@ export default function TakeOrder() {
   const enterEmployeeID = (event) => {
     event.preventDefault();
     setIsEnterID(true);
-    console.log(employee);
+    alert("You can start to take order!")
   }
   return (
     <div className='container-fluid mt-3 row take-order-div'>
@@ -53,9 +54,9 @@ export default function TakeOrder() {
         </div>
       </div>
 
-      <div className='col order-div'>
+      <div className='col cart-div'>
         <h3>Table's {tableID} Cart</h3>
-
+        
         {cart.length !== 0 && cart.map(item => {
           return (
             <div key={item._id} className='row'>
@@ -70,7 +71,12 @@ export default function TakeOrder() {
             </div>
           )
         })}
-        <button className="btn btn-primary">Submit</button>
+        {cart.length !== 0 && (
+          <Link to={`/${tableID}/submitCart/${orderID}`} state={cart}>
+            <button className="btn btn-primary">Submit</button>
+          </Link>
+          
+          )}
       </div>
     </div>
   )

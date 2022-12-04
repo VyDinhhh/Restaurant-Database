@@ -3,6 +3,7 @@ import './App.css';
 import Menu from './components/TakeOrder';
 import Tables from './components/tables';
 import Navbar from './components/navbar';
+import SubmitCart from './components/SubmitCart'
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<Tables />} />
         <Route path="/menu" element={<Menu />} />
         <Route path="/:tableID" element={<Menu/>}/>
+        {/* <Route path="/:tableID/submitCart/:orderID" element={<SubmitCart/>}/> */}
       </Routes>
     </main>
   );
