@@ -4,6 +4,7 @@ import Counter from "./counter";
 
 import * as menuService from "../services/menuService";
 import * as orderService from "../services/orderService";
+import * as employeeService from "../services/employeeService";
 
 export default function TakeOrder() {
   const { tableID } = useParams();
@@ -36,10 +37,15 @@ export default function TakeOrder() {
     }
   };
 
-  const enterEmployeeID = (event) => {
+  const enterEmployeeID = async (event) => {
     event.preventDefault();
-    setIsEnterID(true);
-    console.log(employee);
+    try {
+      const { data } = await employeeService.getEmployee(employee);
+      setIsEnterID(true);
+    } catch (error) {
+      setIsEnterID(false);
+      alert(error.response.data);
+    }
   };
 
   const handleSubmit = async () => {
