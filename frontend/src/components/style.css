@@ -1,0 +1,24 @@
+/* Tables */
+.table-card {
+    text-align: center;
+    width: 7.5rem;
+    transition: 200ms all linear;
+    border: 1px solid rgb(36, 94, 255);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.table-card:hover {
+    background: rgb(36, 94, 255);
+    border: none;
+    color: #fff;
+}
+
+/* Take order */
+.take-order-div {
+    height: 92.5vh;
+}
+.order-div {
+    display: flex;
+    flex-direction: column;
+}
