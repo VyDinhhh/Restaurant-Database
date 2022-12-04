@@ -1,11 +1,11 @@
 const express = require("express");
 const app = express();
-
+const cors = require("cors")
 
 // startup
-// db
-
-
+// cors
+app.use(cors());
+require("./startup/cors")(app);
 // routes
 require("./startup/routes")(app);
 
