@@ -4,10 +4,18 @@ const router = express.Router();
 const { con } = require('../startup/db')
 
 router.get('/', (req, res) => {
-    con.query("SELECT * FROM menu", function (error, result, fields) {
+    con.query("SELECT * FROM `menu`", function (error, result, fields) {
+        if (error) return res.status(400).send(error);
         res.send(result);
     })
 
+})
+
+router.get('/:id', (req, res) => {
+    con.execute("SELECT * FROM menu WHERE `Item_ID` = ?", [req.params.id], function (error, result, fields) {
+        if (error) return res.status(400).send(error);
+        res.send(result)
+    })
 })
 
 module.exports = router;
