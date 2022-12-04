@@ -1,82 +1,82 @@
 export const tablesList = [
     {
-        _id: 1,
-        tableNum: 1
+        Customer_ID: 1,
+        Customer_name: 1
 
     },
     {
-        _id: 2,
-        tableNum: 2
+        Customer_ID: 2,
+        Customer_name: 2
 
     },
     {
-        _id: 3,
-        tableNum: 3
+        Customer_ID: 3,
+        Customer_name: 3
 
     },
     {
-        _id: 4,
-        tableNum: 4
+        Customer_ID: 4,
+        Customer_name: 4
 
     },
     {
-        _id: 5,
-        tableNum: 5
+        Customer_ID: 5,
+        Customer_name: 5
 
     },
     {
-        _id: 6,
-        tableNum: 6
+        Customer_ID: 6,
+        Customer_name: 6
 
     },
     {
-        _id: 7,
-        tableNum: 7
+        Customer_ID: 7,
+        Customer_name: 7
 
     },
     {
-        _id: 8,
-        tableNum: 8
+        Customer_ID: 8,
+        Customer_name: 8
 
     },
     {
-        _id: 9,
-        tableNum: 9
+        Customer_ID: 9,
+        Customer_name: 9
 
     },
     {
-        _id: 10,
-        tableNum: 10
+        Customer_ID: 10,
+        Customer_name: 10
 
     },
     {
-        _id: 11,
-        tableNum: 11
+        Customer_ID: 11,
+        Customer_name: 11
 
     },
     {
-        _id: 12,
-        tableNum: 12
+        Customer_ID: 12,
+        Customer_name: 12
 
     },
     {
-        _id: 13,
-        tableNum: 13
+        Customer_ID: 13,
+        Customer_name: 13
 
     },
     {
-        _id: 14,
-        tableNum: 14
+        Customer_ID: 14,
+        Customer_name: 14
 
     },
     {
-        _id: 15,
-        tableNum: 15
+        Customer_ID: 15,
+        Customer_name: 15
 
     },
     {
-        _id: 16,
-        tableNum: 16
+        Customer_ID: 16,
+        Customer_name: 16
 
     }
 ]
