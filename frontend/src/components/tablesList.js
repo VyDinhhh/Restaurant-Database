@@ -49,34 +49,4 @@ export const tablesList = [
         Customer_name: 10
 
     },
-    {
-        Customer_ID: 11,
-        Customer_name: 11
-
-    },
-    {
-        Customer_ID: 12,
-        Customer_name: 12
-
-    },
-    {
-        Customer_ID: 13,
-        Customer_name: 13
-
-    },
-    {
-        Customer_ID: 14,
-        Customer_name: 14
-
-    },
-    {
-        Customer_ID: 15,
-        Customer_name: 15
-
-    },
-    {
-        Customer_ID: 16,
-        Customer_name: 16
-
-    }
 ]

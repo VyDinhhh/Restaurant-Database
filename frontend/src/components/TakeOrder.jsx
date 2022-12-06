@@ -40,7 +40,7 @@ export default function TakeOrder() {
   const enterEmployeeID = async (event) => {
     event.preventDefault();
     try {
-      const { data } = await employeeService.getEmployee(employee);
+      await employeeService.getEmployee(employee);
       setIsEnterID(true);
     } catch (error) {
       setIsEnterID(false);
@@ -56,6 +56,7 @@ export default function TakeOrder() {
       console.log(orderItem);
       await orderService.addItem(order.insertId, orderItem);
     });
+    window.location = "/";
   };
 
   return (
