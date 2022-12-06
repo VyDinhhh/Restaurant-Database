@@ -5,6 +5,7 @@ import Counter from "./counter";
 import * as menuService from "../services/menuService";
 import * as orderService from "../services/orderService";
 import * as employeeService from "../services/employeeService";
+import * as billService from "../services/billService";
 
 export default function TakeOrder() {
   const { tableID } = useParams();
@@ -40,7 +41,7 @@ export default function TakeOrder() {
   const enterEmployeeID = async (event) => {
     event.preventDefault();
     try {
-      const { data } = await employeeService.getEmployee(employee);
+      await employeeService.getEmployee(employee);
       setIsEnterID(true);
     } catch (error) {
       setIsEnterID(false);
@@ -56,6 +57,14 @@ export default function TakeOrder() {
       console.log(orderItem);
       await orderService.addItem(order.insertId, orderItem);
     });
+    // create bill
+    await billService.createBill({
+      order: order.insertId,
+      customer: tableID,
+      area: 1,
+      discount: 0,
+    });
+    window.location = "/";
   };
 
   return (
