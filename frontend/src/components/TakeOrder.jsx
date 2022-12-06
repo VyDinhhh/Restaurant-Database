@@ -5,6 +5,7 @@ import Counter from "./counter";
 import * as menuService from "../services/menuService";
 import * as orderService from "../services/orderService";
 import * as employeeService from "../services/employeeService";
+import * as billService from "../services/billService";
 
 export default function TakeOrder() {
   const { tableID } = useParams();
@@ -55,6 +56,13 @@ export default function TakeOrder() {
       const orderItem = { item: item.Item_ID, quantity: item.quantity };
       console.log(orderItem);
       await orderService.addItem(order.insertId, orderItem);
+    });
+    // create bill
+    await billService.createBill({
+      order: order.insertId,
+      customer: tableID,
+      area: 1,
+      discount: 0,
     });
     window.location = "/";
   };
