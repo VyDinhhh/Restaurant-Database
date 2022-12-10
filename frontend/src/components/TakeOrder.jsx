@@ -12,6 +12,7 @@ export default function TakeOrder() {
   const [cart, setCart] = useState([]);
   const [employee, setEmployee] = useState("");
   const [isEnterID, setIsEnterID] = useState(false);
+  const orderID = Math.floor(Math.random()*100000000);
 
   const [menu, setMenu] = useState(null);
   useEffect(() => {

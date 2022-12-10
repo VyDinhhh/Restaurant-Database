@@ -18,7 +18,15 @@
 .take-order-div {
     height: 92.5vh;
 }
+
+.menu-div {
+    overflow-y: auto;
+}
 .order-div {
     display: flex;
     flex-direction: column;
+}
+
+.cart-div {
+    border-left: 1px solid rgb(36, 94, 255);;
 }
