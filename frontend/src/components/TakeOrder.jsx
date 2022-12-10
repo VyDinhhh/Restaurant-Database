@@ -40,8 +40,6 @@ export default function TakeOrder() {
 
   const enterEmployeeID = async (event) => {
     event.preventDefault();
-    setIsEnterID(true);
-    alert("You can start to take order!")
     try {
       const { data } = await employeeService.getEmployee(employee);
       setIsEnterID(true);
